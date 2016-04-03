@@ -1,9 +1,0 @@
-Exercise 6: Strings and Text
-Exercise 7: More Printing
-Exercise 8: Printing, Printing
-Exercise 9: Printing, Printing, Printing
-Exercise 10: What was that?
-Exercise 11: Asking Questions
-Exercise 12: Prompting People
-Exercise 13: Paramters, Unpacking, Variables
-Exercise 14: Prompting and Passing
