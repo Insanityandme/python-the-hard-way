@@ -1,38 +1,19 @@
 from sys import exit
 
-while True:
-    print "You walk into a forest of dicks."
-    print "There's a path to the right."
-    print "There's a path to the left."
-    print "Where do you go?"
-
-    choice = raw_input("> ")
-    
-    def beach():
-        print "you approach a beach and an old rotten boat containing something shiny."
-        print "what do you do?"
-
-    if "right" in choice:
-        beach()
-    elif "left" in choice:
-        print "bla"
-
-
 def gold_room():
     print "You enter a room with lots and lots of gold"
     print "What do you do?"
 
-    choice = raw_input("> ")
-    if "0" in choice or "1" in choice:
-        how_much = int(choice)
-    else:
-        dead("Sorry mate, that is not a number, you dead.")
+    while True:
+        try:
+            choice_gold = int(raw_input("> "))
 
-    if how_much < 50:
-        print "Nice, you're not greedy, you win!"
-        exit(0)
-    else: 
-        dead("You greedy bastard")
+            if choice_gold < 50:
+                win()
+            elif choice_gold >= 50:
+                dead("You greedy bastard")
+        except ValueError: 
+                print "Sorry it's not a number, try again."
 
 def bear_room():
     print "There is a bear there."
@@ -66,17 +47,22 @@ def cthulhu_room():
     choice = raw_input("> ")
     
     # If you type flee head, or head flee, flee will be first because of the nature of da loop.
-    if "head" in choice:
+    # The else statement ensures that if you haven't typed anything with flee or head you may 
+    # have another try until you're finished. 
+    if "flee" in choice:
         start()
-    elif "flee" in choice:
+    elif "head" in choice:
         dead("Well, that was tasty!") 
     else:
         cthulhu_room()
 
 def dead(why):
-    print why, "Good Job!"
+    print why, "You dead."
     exit(0)
 
+def win():
+    print "Wonderful, you win the game!"
+    exit(0)
 
 def start():
     print "You are in a dark room."
@@ -84,7 +70,6 @@ def start():
     print "Which one do you choose?"
 
     choice = raw_input("> ")
-
     if choice == "left":
         bear_room()
     elif choice == "right": 
@@ -93,3 +78,4 @@ def start():
         dead("You stumble around the room until you starve to death.")
 
 start()
+

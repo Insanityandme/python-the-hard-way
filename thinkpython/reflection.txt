@@ -1,0 +1,1 @@
+This exercise had some issues and when you look back at this, understand that sometimes the master doesn't really provide you with the greatest solution in relation to its thing working, perhaps it is outdated code, perhaps he didn't really know how vectors worked in the visual module, the fuck do I know. Let us move on, ciao. 
